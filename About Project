@@ -1,0 +1,41 @@
+End-to-End Renewable Energy Analytics Project
+
+PostgreSQL | SQL | Power BI | Data Modeling
+📌 Project Overview
+This project is a complete End-to-End Data Analytics Pipeline designed to analyze renewable energy production (Solar & Wind). The workflow involves extracting raw data from a CSV, managing it within a relational database, and building an interactive dashboard to derive business insights.
+
+🏗️ Architecture & Workflow
+Data Source: Raw energy production data in CSV format.
+Database Layer (Storage): Created a structured schema in PostgreSQL (pgAdmin 4). [cite: 05-01-2026]
+Data Ingestion (ETL): Used SQL COPY commands to migrate data while handling date-time formatting issues.
+Analytics Layer: Established a live connection to Power BI, performed data cleaning via Power Query, and created complex calculations using DAX.
+Visualization: Designed a high-impact dashboard for seasonal and source-wise analysis.
+
+
+
+🛠️ Technical Implementation
+1. SQL & Database Management
+Database: Energy_Analytics
+Table Schema: Defined columns for Date, Source, Production, Season, and hourly intervals.
+
+2. Data Transformation (Power Query)
+Data Type Formatting: Converted the Production column to Whole Number and standardized the Date column for time-series analysis.
+Schema Cleaning: Handled null values and verified categorical consistency for Season (Summer, Winter, Fall, Spring).
+
+3. Advanced Analytics (DAX)
+Created the following measures for dynamic reporting:
+Total Production: SUM('public energy_production'[production])
+Avg Hourly Production: AVERAGE('public energy_production'[production])
+
+
+
+📊 Dashboard Insights
+Seasonal Analysis: Discovered that Solar production peaks in Summer, while Wind energy is more stable during the Winter and Fall seasons.
+Interactive Features: Implemented Slicers for 'Season' and 'Source' to allow real-time data filtering.
+Performance Metrics: Visualized hourly production trends to identify peak generation windows.
+
+
+🎯 Key Learnings
+Building a live connection between a SQL database and a BI tool.
+Writing optimized SQL queries for data ingestion.
+Using DAX for professional business calculations instead of basic Excel-style dragging.
